@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+  background: #ffe259; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffa751,
+    #ffe259
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffa751,
+    #ffe259
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  background-clip: text;
+  background-size: 200%;
+  color: transparent;
+  animation: title-animation 2s infinite alternate;
+}
+
+@keyframes title-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+.tiempo {
+  background-color: rgba(132, 226, 150, 0.4);
+  transition: all 0.3s ease;
+}
+
+.borde-tiempo {
+  box-shadow: rgb(255, 255, 255) 0px 0px 0px 3px,
+    rgba(132, 226, 150, 0.6) 0px 0px 0px 5px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+}
+
+#exito h2 span {
+  text-decoration-color: #ffc256;
+  text-decoration-thickness: 2px;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    width: 400px;
+    height: 500px;
+  }
+}
+
+footer {
+  background: #ffe259; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffa751,
+    #ffe259
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffa751,
+    #ffe259
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  align-items: center;
+}
+
+footer a {
+  transition: all 0.3s ease;
+}
+
+.fab.fa-github {
+  font-size: 24px;
+  margin-left: 5px;
+}
+
+@layer base {
+  @font-face {
+    font-family: Nunito;
+    font-weight: 400;
+    src: url(../fonts/nunito-regular.ttf);
+  }
+  @font-face {
+    font-family: Nunito;
+    font-weight: 900;
+    src: url(../fonts/nunito-black.ttf);
+  }
+}
+
+@layer utilities {
+  * {
+    font-family: "Nunito", sans-serif;
+  }
+  .oculto {
+    @apply hidden;
+  }
+  .visible {
+    @apply block;
+  }
+  .exito {
+    @apply fixed left-2/4 top-2/4 z-10 py-4 px-6 bg-gray-100 rounded-xl flex flex-col justify-center content-center text-center;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 220px;
+  }
+  .overlay {
+    @apply fixed top-0 left-0 w-full h-screen;
+    background-color: rgba(91, 91, 91, 0.8);
+  }
+  .card {
+    @apply relative m-2 cursor-pointer rounded-xl;
+    perspective: 800px;
+    box-shadow: 8px 8px 8px -4px #c8ccd4;
+  }
+  .icon-close {
+    @apply cursor-pointer self-end absolute top-2.5 right-3;
+    line-height: 1;
+  }
+  .flipper-card {
+    @apply absolute w-full h-full;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  .panel {
+    @apply flex absolute items-center justify-center top-0 w-full h-full rounded-xl;
+    backface-visibility: hidden;
+  }
+  .flipper-card .back {
+    transform: rotateY(180deg);
+  }
+  .flipper-effect {
+    transform: rotateY(180deg);
+  }
+  .back {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
+
+  .front {
+    background-color: #ffffff;
+  }
+
+  #card-1 .back,
+  #card-2 .back {
+    background-image: url("../img/cuervo.svg");
+    background-color: #f3f1ff;
+  }
+
+  #card-3 .back,
+  #card-4 .back {
+    background-image: url("../img/erizo.svg");
+    background-color: #fefae5;
+  }
+
+  #card-5 .back,
+  #card-6 .back {
+    background-image: url("../img/maiz.svg");
+    background-color: #efffe6;
+  }
+
+  #card-7 .back,
+  #card-8 .back {
+    background-image: url("../img/manzana.svg");
+    background-color: #fffbda;
+  }
+
+  #card-9 .back,
+  #card-10 .back {
+    background-image: url("../img/nido.svg");
+    background-color: #fff2da;
+  }
+
+  #card-11 .back,
+  #card-12 .back {
+    background-image: url("../img/zorro.svg");
+    background-color: #ffecec;
+  }
+  .btn {
+    @apply py-2.5 px-6 rounded-full inline-block m-auto;
+    background-color: #fcd34d;
+    font-family: "Nunito", sans-serif;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover,
+  .btn:focus {
+    background-color: #ffc256;
+  }
+
+  .grid {
+    @apply p-2 mx-auto mb-6 rounded-lg;
+    box-shadow: 0px 15px 15px -5px #bfc2ca;
+    background-image: linear-gradient(45deg, #dfe1e6 0%, #f2f3f7 100%);
+    width: 320px;
+    height: 420px;
+  }
+}
