@@ -35,9 +35,13 @@ h1 {
   transition: all 0.3s ease;
 }
 
+.tiempo-corriendo {
+  background-color: rgba(132, 226, 150, 0.8);
+}
+
 .borde-tiempo {
   box-shadow: rgb(255, 255, 255) 0px 0px 0px 3px,
-    rgba(132, 226, 150, 0.6) 0px 0px 0px 5px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+    rgba(132, 226, 150, 0.8) 0px 0px 0px 5px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
 }
 
 #exito h2 span {

@@ -13,6 +13,13 @@ function timer() {
 }
 
 function cuentaSegundos() {
+  if (
+    document.querySelector(".tiempo").classList.contains("tiempo-corriendo")
+  ) {
+    document.querySelector(".tiempo").classList.remove("tiempo-corriendo");
+  } else {
+    document.querySelector(".tiempo").classList.add("tiempo-corriendo");
+  }
   document.querySelector(".timer").textContent = seconds++ + " segundos";
 }
 
@@ -69,6 +76,7 @@ $botonNuevoJuego.addEventListener("click", function () {
   timer();
   mezclarCards(12);
   partidaIniciada = true;
+  document.querySelector(".tiempo").classList.add("tiempo-corriendo");
   document.querySelector(".tiempo").classList.add("borde-tiempo");
 });
 
@@ -160,12 +168,15 @@ $jugarOtraVez.addEventListener("click", function (e) {
   e.target.parentElement.className = "oculto";
   resetearJuego();
   partidaIniciada = true;
+  document.querySelector(".tiempo").classList.add("tiempo-corriendo");
   document.querySelector(".tiempo").classList.add("borde-tiempo");
+
   timer();
 });
 
 function resetearJuego() {
   document.querySelector(".overlay").className = "oculto";
+  document.querySelector(".tiempo").classList.remove("tiempo-corriendo");
   document.querySelector(".tiempo").classList.remove("borde-tiempo");
 
   $cards.forEach(function (card) {
