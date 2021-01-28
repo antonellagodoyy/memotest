@@ -148,11 +148,7 @@ function cardsIguales($primerCard, $cardActual) {
   const clasesPrimerCard = $primerCard.parentElement.classList.value;
   const clasesCardActual = $cardActual.parentElement.classList.value;
 
-  if (clasesPrimerCard === clasesCardActual) {
-    return true;
-  } else {
-    return false;
-  }
+  return clasesPrimerCard === clasesCardActual;
 }
 
 const $iconClose = document.querySelector(".icon-close");
