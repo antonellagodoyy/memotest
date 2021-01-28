@@ -4,7 +4,6 @@
   "description": "Juego de memoria",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "postcss": "postcss -w src/css/styles.css -o dist/css/main.css --recursive"
   },
   "repository": {
@@ -18,7 +17,6 @@
   },
   "homepage": "https://github.com/antonellagodoyy/memotest#readme",
   "devDependencies": {
-    "autoprefixer": "^10.2.1",
     "postcss": "^8.2.4",
     "postcss-cli": "^8.3.1",
     "tailwindcss": "^2.0.2"
