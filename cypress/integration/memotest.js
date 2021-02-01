@@ -71,13 +71,10 @@ context("Memotest", () => {
       let listaDePares = Object.values(pares);
 
       listaDePares.forEach((par) => {
-        cy.wait(1);
         cy.get(par[0]).click();
-        cy.wait(1);
         cy.get(par[1]).click();
         cy.wait(1000);
       });
-      cy.wait(1);
 
       cy.get(".flipper-card").should("have.length", 0);
     });
